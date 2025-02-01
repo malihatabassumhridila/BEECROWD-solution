@@ -1,0 +1,13 @@
+#include <stdio.h>
+
+int main() {
+    int i, j, startJ;
+
+    for (i = 1, startJ = 7; i <= 9; i += 2, startJ += 2) {
+        for (j = startJ; j >= startJ - 2; j--) {
+            printf("I=%d J=%d\n", i, j);
+        }
+    }
+
+    return 0;
+}
