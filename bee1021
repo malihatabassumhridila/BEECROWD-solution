@@ -1,0 +1,63 @@
+#include <stdio.h>
+
+int main() {
+    double value;
+    int notes, coins;
+
+    scanf("%lf", &value);
+
+    int value_in_cents = (int)(value * 100 + 0.5); // Converting to cents to avoid precision issues
+
+    // Notes
+    printf("NOTAS:\n");
+    notes = value_in_cents / 10000;
+    printf("%d nota(s) de R$ 100.00\n", notes);
+    value_in_cents %= 10000;
+
+    notes = value_in_cents / 5000;
+    printf("%d nota(s) de R$ 50.00\n", notes);
+    value_in_cents %= 5000;
+
+    notes = value_in_cents / 2000;
+    printf("%d nota(s) de R$ 20.00\n", notes);
+    value_in_cents %= 2000;
+
+    notes = value_in_cents / 1000;
+    printf("%d nota(s) de R$ 10.00\n", notes);
+    value_in_cents %= 1000;
+
+    notes = value_in_cents / 500;
+    printf("%d nota(s) de R$ 5.00\n", notes);
+    value_in_cents %= 500;
+ 
+    notes = value_in_cents / 200;
+    printf("%d nota(s) de R$ 2.00\n", notes);
+    value_in_cents %= 200;
+
+    // Coins
+    printf("MOEDAS:\n");
+    coins = value_in_cents / 100;
+    printf("%d moeda(s) de R$ 1.00\n", coins);
+    value_in_cents %= 100;
+
+    coins = value_in_cents / 50;
+    printf("%d moeda(s) de R$ 0.50\n", coins);
+    value_in_cents %= 50;
+
+    coins = value_in_cents / 25;
+    printf("%d moeda(s) de R$ 0.25\n", coins);
+    value_in_cents %= 25;
+
+    coins = value_in_cents / 10;
+    printf("%d moeda(s) de R$ 0.10\n", coins);
+    value_in_cents %= 10;
+
+    coins = value_in_cents / 5;
+    printf("%d moeda(s) de R$ 0.05\n", coins);
+    value_in_cents %= 5;
+
+    coins = value_in_cents / 1;
+    printf("%d moeda(s) de R$ 0.01\n", coins);
+
+    return 0;
+}
