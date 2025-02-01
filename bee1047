@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int start_hour, start_minute, end_hour, end_minute;
+    int duration_hour, duration_minute;
+
+    // Input the start and end times
+    scanf("%d %d %d %d", &start_hour, &start_minute, &end_hour, &end_minute);
+
+    // Convert start and end times to minutes
+    int start_total_minutes = start_hour * 60 + start_minute;
+    int end_total_minutes = end_hour * 60 + end_minute;
+
+    // Calculate the total duration in minutes
+    int total_duration_minutes;
+    if (end_total_minutes > start_total_minutes) {
+        total_duration_minutes = end_total_minutes - start_total_minutes;
+    } else {
+        total_duration_minutes = (24 * 60 - start_total_minutes) + end_total_minutes;
+    }
+
+    // Convert the total duration into hours and minutes
+    duration_hour = total_duration_minutes / 60;
+    duration_minute = total_duration_minutes % 60;
+
+    // If duration is exactly 24 hours
+    if (start_hour == end_hour && start_minute == end_minute) {
+        duration_hour = 24;
+        duration_minute = 0;
+    }
+
+    // Output the result
+    printf("O JOGO DUROU %d HORA(S) E %d MINUTO(S)\n", duration_hour, duration_minute);
+
+    return 0;
+}
