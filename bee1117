@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    float score, sum = 0;
+    int valid_scores = 0;
+
+    while (valid_scores < 2) {
+        scanf("%f", &score);
+
+        // Validate the score
+        if (score < 0 || score > 10) {
+            printf("nota invalida\n");
+        } else {
+            sum += score;
+            valid_scores++;
+        }
+    }
+
+    // Calculate and print the average
+    printf("media = %.2f\n", sum / 2);
+
+    return 0;
+}
