@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    int month;
+    char *months[] = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+
+    scanf("%d", &month);
+
+    if (month >= 1 && month <= 12) {
+        printf("%s\n", months[month - 1]);
+    } else {
+        printf("Invalid month.\n");
+    }
+
+    return 0;
+}
