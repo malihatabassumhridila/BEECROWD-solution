@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int code, quantity;
+    double price;
+
+    // Read the input
+    scanf("%d %d", &code, &quantity);
+
+    // Determine the price based on the code
+    switch (code) {
+        case 1:
+            price = 4.00; // Cachorro Quente
+            break;
+        case 2:
+            price = 4.50; // X-Salada
+            break;
+        case 3:
+            price = 5.00; // X-Bacon
+            break;
+        case 4:
+            price = 2.00; // Torrada Simples
+            break;
+        case 5:
+            price = 1.50; // Refrigerante
+            break;
+        default:
+            price = 0.00; // Invalid code
+            break;
+    }
+
+    // Calculate the total value
+    double total = price * quantity;
+
+    // Print the result
+    printf("Total: R$ %.2lf\n", total);
+
+    return 0;
+}
