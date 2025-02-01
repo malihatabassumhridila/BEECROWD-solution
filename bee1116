@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int n, x, y;
+
+    // Read the number of test cases
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++) {
+        // Read the values of x and y
+        scanf("%d %d", &x, &y);
+
+        // Check if division is possible
+        if (y == 0) {
+            printf("divisao impossivel\n");
+        } else {
+            // Perform division and print result with 1 decimal place
+            printf("%.1f\n", (float)x / y);
+        }
+    }
+
+    return 0;
+}
