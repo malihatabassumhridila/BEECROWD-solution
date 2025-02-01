@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+void classify_triangle(double A, double B, double C) {
+    // Sort the sides in decreasing order using a simple sorting approach
+    if (A < B) { double temp = A; A = B; B = temp; }
+    if (A < C) { double temp = A; A = C; C = temp; }
+    if (B < C) { double temp = B; B = C; C = temp; }
+
+    // Check for triangle validity
+    if (A >= B + C) {
+        printf("NAO FORMA TRIANGULO\n");
+        return;
+    }
+
+    // Check for right, obtuse, or acute triangles
+    if (A * A == B * B + C * C) {
+        printf("TRIANGULO RETANGULO\n");
+    }
+    if (A * A > B * B + C * C) {
+        printf("TRIANGULO OBTUSANGULO\n");
+    }
+    if (A * A < B * B + C * C) {
+        printf("TRIANGULO ACUTANGULO\n");
+    }
+
+    // Check for equilateral or isosceles triangles
+    if (A == B && B == C) {
+        printf("TRIANGULO EQUILATERO\n");
+    } else if (A == B || B == C || A == C) {
+        printf("TRIANGULO ISOSCELES\n");
+    }
+}
+
+int main() {
+    double A, B, C;
+    
+    // Read input values
+    scanf("%lf %lf %lf", &A, &B, &C);
+
+    // Classify the triangle
+    classify_triangle(A, B, C);
+
+    return 0;
+}
