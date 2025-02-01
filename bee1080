@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    int numbers[100];
+    int highest = 0;
+    int position = 0;
+
+    // Read 100 integers
+    for (int i = 0; i < 100; i++) {
+        scanf("%d", &numbers[i]);
+
+        // Update highest and position if necessary
+        if (numbers[i] > highest) {
+            highest = numbers[i];
+            position = i + 1; // Positions are 1-based
+        }
+    }
+
+    // Print the highest number and its position
+    printf("%d\n%d\n", highest, position);
+
+    return 0;
+}
