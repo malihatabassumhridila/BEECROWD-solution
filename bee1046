@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    int start, end, duration;
+
+    // Read the start and end time of the game
+    scanf("%d %d", &start, &end);
+
+    // Calculate the duration of the game
+    if (start == end) {
+        duration = 24;  // If start and end are the same, the game lasted 24 hours
+    } else if (start < end) {
+        duration = end - start;  // Normal case where game ends after start in the same day
+    } else {
+        duration = (24 - start) + end;  // Case where the game ends on the next day
+    }
+
+    // Print the result in the required format
+    printf("O JOGO DUROU %d HORA(S)\n", duration);
+
+    return 0;
+}
