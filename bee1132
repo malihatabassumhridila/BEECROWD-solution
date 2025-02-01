@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int x, y, temp, sum = 0;
+
+    // Read the two input numbers
+    scanf("%d %d", &x, &y);
+
+    // Ensure x is the smaller number
+    if (y < x) {
+        temp = x;
+        x = y;
+        y = temp;
+    }
+
+    // Calculate the sum of numbers not divisible by 13
+    for (int i = x; i <= y; i++) {
+        if (i % 13 != 0) {
+            sum += i;
+        }
+    }
+
+    // Print the result
+    printf("%d\n", sum);
+
+    return 0;
+}
