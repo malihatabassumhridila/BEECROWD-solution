@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    double score, total, average;
+    int valid_count, option;
+
+    do {
+        valid_count = 0;
+        total = 0.0;
+
+        // Validate and collect two valid scores
+        while (valid_count < 2) {
+            scanf("%lf", &score);
+
+            if (score >= 0.0 && score <= 10.0) {
+                total += score;
+                valid_count++;
+            } else {
+                printf("nota invalida\n");
+            }
+        }
+
+        // Calculate and display the average
+        average = total / 2.0;
+        printf("media = %.2lf\n", average);
+
+        // Ask if user wants a new calculation
+        do {
+            printf("novo calculo (1-sim 2-nao)\n");
+            scanf("%d", &option);
+        } while (option != 1 && option != 2);
+
+    } while (option == 1);
+
+    return 0;
+}
