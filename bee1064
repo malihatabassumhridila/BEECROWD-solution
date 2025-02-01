@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    float value;
+    int positive_count = 0;
+    float positive_sum = 0.0;
+
+    // Loop to read 6 values
+    for (int i = 0; i < 6; i++) {
+        scanf("%f", &value);
+        if (value > 0) {
+            positive_count++;
+            positive_sum += value;
+        }
+    }
+
+    // Calculate average of positive values
+    float average = positive_sum / positive_count;
+
+    // Print results
+    printf("%d valores positivos\n", positive_count);
+    printf("%.1f\n", average);
+
+    return 0;
+}
