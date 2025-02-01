@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int n, x, y, i, sum;
+
+    // Read the number of test cases
+    scanf("%d", &n);
+
+    while (n--) {
+        // Read the two integers X and Y
+        scanf("%d %d", &x, &y);
+
+        // Ensure X is smaller than Y
+        if (x > y) {
+            int temp = x;
+            x = y;
+            y = temp;
+        }
+
+        sum = 0;
+
+        // Calculate the sum of odd numbers between X and Y
+        for (i = x + 1; i < y; i++) {
+            if (i % 2 != 0) {
+                sum += i;
+            }
+        }
+
+        // Print the result
+        printf("%d\n", sum);
+    }
+
+    return 0;
+}
