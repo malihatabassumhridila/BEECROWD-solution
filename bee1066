@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int numbers[5];
+    int even = 0, odd = 0, positive = 0, negative = 0;
+
+    // Read 5 integers
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &numbers[i]);
+
+        // Check even or odd
+        if (numbers[i] % 2 == 0)
+            even++;
+        else
+            odd++;
+
+        // Check positive or negative
+        if (numbers[i] > 0)
+            positive++;
+        else if (numbers[i] < 0)
+            negative++;
+    }
+
+    // Output results
+    printf("%d valor(es) par(es)\n", even);
+    printf("%d valor(es) impar(es)\n", odd);
+    printf("%d valor(es) positivo(s)\n", positive);
+    printf("%d valor(es) negativo(s)\n", negative);
+
+    return 0;
+}
