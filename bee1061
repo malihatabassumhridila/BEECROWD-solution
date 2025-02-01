@@ -1,0 +1,45 @@
+#include<stdio.h>
+int main() {
+    int start_day, end_day;
+    int start_h, start_m, start_s;
+    int end_h, end_m, end_s;
+    int total_seconds_start, total_seconds_end, total_seconds_diff;
+    int days, hours, minutes, seconds;
+
+    // Input start day
+    scanf("Dia %d", &start_day);
+
+    // Input start time
+    scanf("%d : %d : %d", &start_h, &start_m, &start_s);
+
+    // Input end day
+    scanf(" Dia %d", &end_day);
+
+    // Input end time
+    scanf("%d : %d : %d", &end_h, &end_m, &end_s);
+
+    // Convert start time to total seconds
+    total_seconds_start = start_day * 86400 + start_h * 3600 + start_m * 60 + start_s;
+
+    // Convert end time to total seconds
+    total_seconds_end = end_day * 86400 + end_h * 3600 + end_m * 60 + end_s;
+
+    // Calculate difference in seconds
+    total_seconds_diff = total_seconds_end - total_seconds_start;
+
+    // Calculate days, hours, minutes, seconds
+    days = total_seconds_diff / 86400;
+    total_seconds_diff %= 86400;
+    hours = total_seconds_diff / 3600;
+    total_seconds_diff %= 3600;
+    minutes = total_seconds_diff / 60;
+    seconds = total_seconds_diff % 60;
+
+    // Output results
+    printf("%d dia(s)\n", days);
+    printf("%d hora(s)\n", hours);
+    printf("%d minuto(s)\n", minutes);
+    printf("%d segundo(s)\n", seconds);
+
+    return 0;
+}
